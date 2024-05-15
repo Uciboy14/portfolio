@@ -1,41 +1,96 @@
-# portfolio
+# Portfolio Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+![Portfolio Header](path/to/your/header-image.png)
 
-## Recommended IDE Setup
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Introduction
+This is the frontend part of a personal portfolio web application built with Vue.js. The application showcases your skills, projects, experience, and education, allowing potential employers and collaborators to learn more about you and your work.
 
-## Customize configuration
+## Features
+- **Dynamic Tabs:** Navigate between different sections such as Skills, Experience, and Education.
+- **Responsive Design:** Optimized for viewing on desktops, tablets, and mobile devices.
+- **Dynamic Content:** Easily update your portfolio content by modifying a single data file.
+- **Vuex for State Management:** Manage the state of your application efficiently.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Technologies Used
+- **Frontend:** Vue.js, Vue Router, Vuex
+- **Styling:** CSS (with scoped styles in Vue components)
+- **Build Tools:** Node.js, npm
 
-## Project Setup
+## Project Structure
+portfolio-frontend/
+│
+├── public/
+│ ├── index.html
+│ └── ...
+│
+├── src/
+│ ├── assets/
+│ ├── components/
+│ │ ├── Header.vue
+│ │ ├── Footer.vue
+│ │ ├── TabContent.vue
+│ │ └── ...
+│ ├── views/
+│ │ ├── Home.vue
+│ │ └── ...
+│ ├── App.vue
+│ ├── main.js
+│ ├── router.js
+│ └── store.js
+│
+├── package.json
+└── README.md
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
+## Installation
 
-```sh
-npm run dev
-```
+1. Navigate to the project directory:
+    ```sh
+    cd portfolio-frontend
+    ```
+2. Install dependencies:
+    ```sh
+    npm install
+    ```
+3. Start the development server:
+    ```sh
+    npm run serve
+    ```
 
-### Compile and Minify for Production
+## Usage
+1. Open your browser and navigate to `http://localhost:8080` to view the application.
+2. Navigate between different sections using the tabs.
+3. Update your portfolio content by modifying the data in the Vue components.
 
-```sh
-npm run build
-```
+## Screenshots
+![Home Page](path/to/your/home-page-image.png)
+*Home Page*
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+![Skills Section](path/to/your/skills-section-image.png)
+*Skills Section*
 
-```sh
-npm run test:unit
-```
+![Projects Section](path/to/your/projects-section-image.png)
+*Projects Section*
 
-### Lint with [ESLint](https://eslint.org/)
+![Experience Section](path/to/your/experience-section-image.png)
+*Experience Section*
 
-```sh
-npm run lint
-```
+![Education Section](path/to/your/education-section-image.png)
+*Education Section*
+
+## Contributing
+Contributions are welcome! Please create a pull request or submit an issue for any enhancements or bug fixes.
+
+## Contact
+For any inquiries or feedback, please contact me at [uccodetech@example.com](mailto:uccodetech@example.com).
