@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="copyright">
-            <p>Copyright @ ucoodetech 2024.</p>
+            <p>Copyright &copy; ucoodetech 2024. All rights reserved.</p>
         </div>
     </footer>
 </template>

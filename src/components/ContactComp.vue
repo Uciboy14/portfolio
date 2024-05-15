@@ -1,14 +1,33 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import axios from 'axios'
 
-const name = ref('')
-const email = ref('')
-const message = ref('')
+const formData = ref({
+    name: '',
+    email: '',
+    message: ''
+    
+});
 
-function Send(name, email, message) {
-    console.log(name, message, email)
+const errorMessage = ref('');
+
+async function submitForm() {
+    try {
+        const response = await axios.post('https://formspree.io/f/mrgvzjyj', formData);
+        console.log('Form submitted successfully:', response.data)
+        formData.value = { name: '', email: '', message: '' };
+
+    } catch (error) {
+                console.error('Error submitting form:', error);
+                // Handle error (e.g., display an error message)
+                formData.value = { name: '', email: '', message: '' };
+                errorMessage.value = 'There was an error submitting the form. Please try again.';
+                // Clear the error message after 5 seconds
+                setTimeout(() => {
+                    errorMessage.value = '';
+                }, 5000); // 5000 milliseconds = 5 seconds
+            }
 }
-
 
 </script>
 
@@ -29,12 +48,13 @@ function Send(name, email, message) {
                     <a href="images/my-cv2.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form action="">
-                        <input type="text" name="Name" v-model="name" placeholder="Your Name" required>
-                        <input type="email" name="email" v-model="email"  placeholder="Your Email" required>
-                        <textarea name="message" rows="6" v-model="message" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2" @click.prevent="Send">Submit</button>
+                    <form @submit.prevent="submitForm">
+                        <input type="text" v-model="formData.name" name="Name"  placeholder="Your Name" required>
+                        <input type="email" v-model="formData.email" name="email"  placeholder="Your Email" required>
+                        <textarea name="message" v-model="formData.message" rows="6"  placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
                     </form>
+                    <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
                 </div>
             </div> 
         </div>
@@ -100,5 +120,10 @@ form .btn2 {
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
 }
 </style> 
